@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Bible Videos">
+<meta name="theme-color" content="#D6F1FF">
+<meta name="robots" content="noindex, nofollow">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="style.css">
+<title>Bible Videos</title>
+</head>
+<body>
+<div id="app">
+  <header id="bar">
+    <button id="back" class="back" aria-label="Back" hidden>&#x2B05;</button>
+    <h1 id="title">Bible Videos</h1>
+    <button id="gear" class="gear" aria-label="Grown-ups">&#x2699;</button>
+  </header>
+  <main id="grid" class="grid"></main>
+  <div id="empty" class="empty" hidden></div>
+</div>
+
+<div id="player" hidden>
+  <video id="video" playsinline webkit-playsinline preload="auto" disablepictureinpicture disableremoteplayback x-webkit-airplay="deny"></video>
+  <div id="shield"></div>
+  <svg id="ring" viewBox="0 0 100 100" hidden><circle cx="50" cy="50" r="40" class="bg"/><circle id="ringfg" cx="50" cy="50" r="40" class="fg"/></svg>
+</div>
+
+<div id="parent" hidden>
+  <div class="sheet">
+    <div class="sheet-head"><h2>Grown-ups</h2><button id="pclose" class="btn grey">Done</button></div>
+    <div id="storage" class="note"></div>
+    <div id="dlstatus" class="note strong"></div>
+    <div class="row">
+      <button id="importBtn" class="btn blue">Add a story from Files&hellip;</button>
+      <button id="dlSel" class="btn green" hidden>Download checked stories</button>
+      <button id="stopBtn" class="btn orange" hidden>Stop</button>
+    </div>
+    <input id="picker" type="file" multiple hidden>
+    <div id="plist"></div>
+    <details class="note"><summary>Help</summary>
+      <p><b>Leaving a video:</b> press and hold the top-left corner of the screen for 3 seconds. A faint ring fills up, then the video closes.</p>
+      <p><b>Grown-ups screen:</b> press and hold the &#x2699; button for 2 seconds.</p>
+      <p><b>Keep the kids in the app:</b> use Guided Access (Settings &rsaquo; Accessibility &rsaquo; Guided Access, then triple-click the top button).</p>
+    </details>
+    <div id="ver" class="note small"></div>
+  </div>
+</div>
+<div id="toast" hidden></div>
+<script src="intro.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
